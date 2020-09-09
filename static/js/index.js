@@ -7,19 +7,19 @@
 function hora() {
 	alert("Hora");
 	console.log("Hora");
-	document.getElementById("sensor").innerHTML="led on";
+	document.getElementById("sensor").innerHTML="HORA";
   
 }
 function minutos(){	
 	alert("Minutos");
 	console.log("Minutos");
-	document.getElementById("sensor").innerHTML="led off";
+	document.getElementById("sensor").innerHTML="MINUTOS";
 }
 
 function segundo(){	
 	alert("Segundos");
 	console.log("Segundos");
-	document.getElementById("sensor").innerHTML="led off";
+	document.getElementById("sensor").innerHTML="SEGUNDOS";
 }
 
 
