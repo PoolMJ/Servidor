@@ -1,18 +1,26 @@
 //https://www.eclipse.org/paho/clients/js/
 
-function LED1_On() {
-	alert("led on");
-	console.log("led on");
+
+
+
+
+function hora() {
+	alert("Hora");
+	console.log("Hora");
 	document.getElementById("sensor").innerHTML="led on";
   
 }
-function LED1_Off(){	
-	alert("led off");
-	console.log("led off");
+function minutos(){	
+	alert("Minutos");
+	console.log("Minutos");
 	document.getElementById("sensor").innerHTML="led off";
 }
 
-
+function segundo(){	
+	alert("Segundos");
+	console.log("Segundos");
+	document.getElementById("sensor").innerHTML="led off";
+}
 
 
 
