@@ -3,8 +3,8 @@
 
 function total() {
 	var x, y;
-	x="5000";
-	y="3000";
+	x="1";
+	y="2";
 	message = new Paho.MQTT.Message("t"+" "+ x +" "+ y );
     message.destinationName = "pemaldonado.fie@unach.edu.ec/RASP";
     client.send(message);
@@ -12,8 +12,8 @@ function total() {
 }
 function Hora() {
 	var x, y;
-	x="5000";
-	y="3000";
+	x="1";
+	y="2";
 	message = new Paho.MQTT.Message("h"+" "+ x +" "+ y );
     message.destinationName = "pemaldonado.fie@unach.edu.ec/RASP";
     client.send(message);
@@ -21,8 +21,8 @@ function Hora() {
 }
 function Minuto(){	
 	var x, y;
-	x="5000";
-	y="3000";
+	x="1";
+	y="2";
 	message = new Paho.MQTT.Message("m"+" "+ x +" "+ y );
     message.destinationName = "pemaldonado.fie@unach.edu.ec/RASP";
     client.send(message);
@@ -30,8 +30,8 @@ function Minuto(){
 }
 function Segundos(){	
 	var x, y;
-	x="5000";
-	y="3000";
+	x="1";
+	y="2";
 	message = new Paho.MQTT.Message("s"+" "+ x +" "+ y );
     message.destinationName = "pemaldonado.fie@unach.edu.ec/RASP";
     client.send(message);
