@@ -2,37 +2,29 @@
 
 
 function total() {
-	var x, y;
-	x="1";
-	y="2";
-	message = new Paho.MQTT.Message("t"+" "+ x +" "+ y );
+	
+	message = new Paho.MQTT.Message("t");
     message.destinationName = "pemaldonado.fie@unach.edu.ec/RASP";
     client.send(message);
 	
 }
 function Hora() {
-	var x, y;
-	x="1";
-	y="2";
-	message = new Paho.MQTT.Message("h"+" "+ x +" "+ y );
+	
+	message = new Paho.MQTT.Message("h");
     message.destinationName = "pemaldonado.fie@unach.edu.ec/RASP";
     client.send(message);
 	
 }
 function Minuto(){	
-	var x, y;
-	x="1";
-	y="2";
-	message = new Paho.MQTT.Message("m"+" "+ x +" "+ y );
+
+	message = new Paho.MQTT.Message("m");
     message.destinationName = "pemaldonado.fie@unach.edu.ec/RASP";
     client.send(message);
 	
 }
 function Segundos(){	
-	var x, y;
-	x="1";
-	y="2";
-	message = new Paho.MQTT.Message("s"+" "+ x +" "+ y );
+	
+	message = new Paho.MQTT.Message("s");
     message.destinationName = "pemaldonado.fie@unach.edu.ec/RASP";
     client.send(message);
 	
