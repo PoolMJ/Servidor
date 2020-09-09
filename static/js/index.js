@@ -1,29 +1,42 @@
 //https://www.eclipse.org/paho/clients/js/
 
 
-
-
-
-function hora() {
-	alert("Hora");
-	console.log("Hora");
-	document.getElementById("sensor").innerHTML="HORA";
-  
+function total() {
+	var x, y;
+	x="5000";
+	y="3000";
+	message = new Paho.MQTT.Message("t"+" "+ x +" "+ y );
+    message.destinationName = "pemaldonado.fie@unach.edu.ec/RASP";
+    client.send(message);
+	
 }
-function minutos(){	
-	alert("Minutos");
-	console.log("Minutos");
-	document.getElementById("sensor").innerHTML="MINUTOS";
+function Hora() {
+	var x, y;
+	x="5000";
+	y="3000";
+	message = new Paho.MQTT.Message("h"+" "+ x +" "+ y );
+    message.destinationName = "pemaldonado.fie@unach.edu.ec/RASP";
+    client.send(message);
+	
 }
-
-function segundo(){	
-	alert("Segundos");
-	console.log("Segundos");
-	document.getElementById("sensor").innerHTML="SEGUNDOS";
+function Minuto(){	
+	var x, y;
+	x="5000";
+	y="3000";
+	message = new Paho.MQTT.Message("m"+" "+ x +" "+ y );
+    message.destinationName = "pemaldonado.fie@unach.edu.ec/RASP";
+    client.send(message);
+	
 }
-
-
-
+function Segundos(){	
+	var x, y;
+	x="5000";
+	y="3000";
+	message = new Paho.MQTT.Message("s"+" "+ x +" "+ y );
+    message.destinationName = "pemaldonado.fie@unach.edu.ec/RASP";
+    client.send(message);
+	
+}
 
 // Create a client instance
   //client = new Paho.MQTT.Client("postman.cloudmqtt.com", 14970);
@@ -49,9 +62,9 @@ function segundo(){
     // Once a connection has been made, make a subscription and send a message.
     console.log("Conectado...");
 	
-    client.subscribe("pemaldonado.fie@unach.edu.ec/rpi");
+    client.subscribe("pemaldonado.fie@unach.edu.ec/WEB");
     message = new Paho.MQTT.Message("hola desde la web");
-    message.destinationName = "pemaldonado.fie@unach.edu.ec/servidor";
+    message.destinationName = "pemaldonado.fie@unach.edu.ec/RASP";
     client.send(message);
 	
   }
@@ -70,6 +83,7 @@ function segundo(){
 
   // called when a message arrives
   function onMessageArrived(message) {
-    console.log("ADA"+message.payloadString);
+     text=(message.payloadString);
+	 console.log(text)
+	 document.getElementById("respuesta").innerHTML = text;
   }
-  
