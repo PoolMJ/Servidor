@@ -2,33 +2,14 @@
 
 
 function total() {
+	var total;
 	
-	message = new Paho.MQTT.Message("t");
+	message = new Paho.MQTT.Message("t"+" "+ x +" "+ y );
     message.destinationName = "pemaldonado.fie@unach.edu.ec/RASP";
     client.send(message);
 	
 }
-function Hora() {
-	
-	message = new Paho.MQTT.Message("h");
-    message.destinationName = "pemaldonado.fie@unach.edu.ec/RASP";
-    client.send(message);
-	
-}
-function Minuto(){	
 
-	message = new Paho.MQTT.Message("m");
-    message.destinationName = "pemaldonado.fie@unach.edu.ec/RASP";
-    client.send(message);
-	
-}
-function Segundos(){	
-	
-	message = new Paho.MQTT.Message("s");
-    message.destinationName = "pemaldonado.fie@unach.edu.ec/RASP";
-    client.send(message);
-	
-}
 
 // Create a client instance
   //client = new Paho.MQTT.Client("postman.cloudmqtt.com", 14970);
