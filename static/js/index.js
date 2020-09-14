@@ -3,8 +3,8 @@
 
 function total() {
 	var total;
-	
-	message = new Paho.MQTT.Message("t"+" "+ x +" "+ y );
+	t="horaactual";
+	message = new Paho.MQTT.Message(""+" "+ t +" "+ y );
     message.destinationName = "pemaldonado.fie@unach.edu.ec/RASP";
     client.send(message);
 	
