@@ -1,7 +1,6 @@
 //https://www.eclipse.org/paho/clients/js/
 
 
-
 (function(){
 	var actualizarHora = function(){
 		var fecha = new Date(),
