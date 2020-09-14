@@ -1,52 +1,56 @@
-//  Método 1:
-let d = new Date();
-document.getElementById("date").innerHTML =
-  "<h1>Current time: " + d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds()  + "</h1>"
+//https://www.eclipse.org/paho/clients/js/
 
-// Using Template Strings
-  document.getElementById("date").innerHTML =
-  `<h1>Current time: ${d.getHours()}:${d.getMinutes()}:${d.getSeconds()} </h1>`
+let horaFechaActual = new Date();
+console.log(horaFechaActual);
 
 
-//  Método 2: 
 
-function getHour(){
-    const h = new Date();
-    const hours = ((h.getHours() < 10) ? "0" : "") + h.getHours();
-    const minutes = ((h.getMinutes() < 10) ? "0" : "") + h.getMinutes();
-    const secs = ((h.getSeconds() < 10) ? "0" : "") + h.getSeconds();
+// Create a client instance
+  //client = new Paho.MQTT.Client("postman.cloudmqtt.com", 14970);
+  
+  client = new Paho.MQTT.Client("maqiatto.com", 8883, "web_" + parseInt(Math.random() * 100, 10));
 
-    console.log("Hora actual: " + hours + ":" + minutes + ":" + secs);
+  // set callback handlers
+  client.onConnectionLost = onConnectionLost;
+  client.onMessageArrived = onMessageArrived;
+  var options = {
+   useSSL: false,
+    userName: "pemaldonado.fie@unach.edu.ec",
+    password: "Paul625366236",
+    onSuccess:onConnect,
+    onFailure:doFail
+  }
 
-}
+  // connect the client
+  client.connect(options);
+   
+  // called when the client connects
+  function onConnect() {
+    // Once a connection has been made, make a subscription and send a message.
+    console.log("Conectado...");
+	
+    client.subscribe("pemaldonado.fie@unach.edu.ec/WEB");
+    message = new Paho.MQTT.Message("hola desde la web");
+    message.destinationName = "pemaldonado.fie@unach.edu.ec/RASP";
+    client.send(message);
+	
+  }
 
-getHour();
+  function doFail(e){
+    console.log(e);
+	
+  }
 
-//  Método 2.1 - Using IIFE:
+  // called when the client loses its connection
+  function onConnectionLost(responseObject) {
+    if (responseObject.errorCode !== 0) {
+      console.log("onConnectionLost:"+responseObject.errorMessage);
+    }
+  }
 
-(function(){
-    const h = new Date();
-    const hours = ((h.getHours() < 10) ? "0" : "") + h.getHours();
-    const minutes = ((h.getMinutes() < 10) ? "0" : "") + h.getMinutes();
-    const secs = ((h.getSeconds() < 10) ? "0" : "") + h.getSeconds();
-
-    console.log("Hora actual: " + hours + ":" + minutes + ":" + secs);
-
-})();
-
-//  Método 3:
-
-let timeNow = new Date();
-    
-// Queremos que la hora se muestre siempre con 2 dígitos. Para eso, hacemos lo siguiente:
-// Usamos un ternario para saber si el número de digitos es menor que 2
-let hours = timeNow.getHours().toString().length < 2 ? "0" + timeNow.getHours() : timeNow.getHours();
-let minutes = timeNow.getMinutes().toString().length < 2 ? "0" + timeNow.getMinutes() : timeNow.getMinutes();
-let seconds = timeNow.getSeconds().toString().length < 2 ? "0" + timeNow.getSeconds() : timeNow.getSeconds();
-
-//  Concatenando variables | Usando ES5 
-// let mainTime = hours + ":" + minutes + ":" + seconds;
- //  Concatenando variables | Usando ES6: Template Strings (Template literals) 
-let mainTime = `${hours}:${minutes}:${seconds}`;
-
-console.log(mainTime);
+  // called when a message arrives
+  function onMessageArrived(message) {
+     text=(message.payloadString);
+	 console.log(text)
+	 document.getElementById("respuesta").innerHTML = text;
+  }

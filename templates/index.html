@@ -1,13 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Get Current Hour using Javascript Code</title>
-  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
+<script src="/static/js/index.js"></script>
+<title>HarasMinutosSegundos</title>
 </head>
 <body>
-  <section id="date"></section>
+
+<!--<center><img src="/static/images/python2.png" alt="user" tyle="width:142px;height:104px;"></center-->
+
+
+<center><h1>UNIVERSIDAD NACIONAL DE CHIMBORAZO</h1></center>
+<center><h1>Facultad de Ingenieria</h1></center>
+<center><h1>Carrera de Ing. Electronica y Telecomunicaciones</h1></center>
+<center><h2>Examen de Embebidos</h2></center>
+
+<center><h2>Captura en Tiempo en tiempo real</h2></center>
+
+<h1>Hora</h1>
+
+<div class="wrap">
+		<div class="widget">
+			<div class="reloj">
+			<p id="horas" class="horas"></p>
+			<p>:</p>
+			<p id="minutos" class="minutos"></p>
+			<p>:</p>
+			<div class="caja-segundos">
+				<p id="ampm" class="ampm"></p>
+				<p id="segundos" class="segundos"></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="index.js"></script>
+
+<button type="button" onclick="total();">Impr_Hora_Actual</button>
+
+<h2 style="background-color:#A9A9F5;color:#FFFFFF>;"><b>horaactual:</h> <h id="horaactual"</b></h2>
+
+
+
+
+
+<!--<h2>Sensor:</h><h id="sensor">--</h2>
+<button id = 'LED1On'type="button" onclick="LED1_On();">
+LED1 ON!</button>
+<button id = 'LED1Off' type="button" onclick="LED1_Off();">
+LED1_OFF!</button-->
+
+<<center><img src="/static/images/python2.png" alt="user" tyle="width:142px;height:104px;"></center>
+
 </body>
-<script type="text/javascript" src="script.js"></script>
 </html>
