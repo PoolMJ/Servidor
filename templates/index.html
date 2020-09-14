@@ -17,27 +17,16 @@
 
 <center><h2>Captura en Tiempo en tiempo real</h2></center>
 
-<h1>Hora</h1>
 
-<div class="wrap">
-		<div class="widget">
-			<div class="reloj">
-			<p id="horas" class="horas"></p>
-			<p>:</p>
-			<p id="minutos" class="minutos"></p>
-			<p>:</p>
-			<div class="caja-segundos">
-				<p id="ampm" class="ampm"></p>
-				<p id="segundos" class="segundos"></p>
-				</div>
-			</div>
-		</div>
-	</div>
-	<script src="index.js"></script>
 
-<button type="button" onclick="total();">Impr_Hora_Actual</button>
 
-<h2 style="background-color:#A9A9F5;color:#FFFFFF>;"><b>horaactual:</h> <h id="horaactual"</b></h2>
+<script type=”text/javascript”>
+
+var d = new Date();
+
+document.write(‘Fecha: ‘+d.getDate(),'<br>Dia de la semana: ‘+d.getDay(),'<br>Mes (0 al 11): ‘+d.getMonth(),'<br>Año:’+d.getFullYear(),'<br>Hora:’+d.getHours(),'<br>HoraUTC: ‘+d.getUTCHours(),'<br>Minutos: ‘+d.getMinutes(),'<br>Segundos: ‘+d.getSeconds());
+
+</script>
 
 
 
