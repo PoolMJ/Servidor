@@ -53,14 +53,16 @@
 
 
   // called when a message arrives
-  function onMessageArrived(message) {
-     identificador=(message.payloadString).split(" ")[0];
-	 dato=(message.payloadString).split(" ")[1];
-	 console.log("hora recibida")
-	 if(identificador=="H")
-		 document.getElementById("hora").innerHTML = dato;
-	 if(identificador=="M")
-		 document.getElementById("minuto").innerHTML = dato;
-	 if(identificador=="S")
-		 document.getElementById("segundo").innerHTML = dato;
-  }
+
+
+function LED_PRENDIDO_1(){
+	massage=new Paho.MQTT.Message("led1p")
+	message.destinationName="pemaldonado.fie@unach.edu.ec/psd";
+}
+
+function LED_APAGADO_2(){
+	massage=new Paho.MQTT.Message("led1a")
+	message.destinationName="pemaldonado.fie@unach.edu.ec/psd";
+}
+
+
