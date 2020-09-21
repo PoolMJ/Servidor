@@ -53,6 +53,11 @@
 
   // called when a message arrives
 
+function onMessageArrived(message) {
+	 texto=(message.payloadString);
+}
+
+
 
 function LED_PRENDIDO_1(){
 	console.log("Led Prendido")
