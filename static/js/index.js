@@ -64,7 +64,7 @@ function onMessageArrived(message) {
 function SUMA(){
 	n1=document.getElementById("n1").value;
 	n2=document.getElementById("n2").value;
-	message = new Paho.MQTT.Message("S"+" "+ n1 +" "+ n2 );
+	message = new Paho.MQTT.Message("SM"+" "+ n1 +" "+ n2 );
 	message.destinationName="pemaldonado.fie@unach.edu.ec/psd";
 	client.send(message);
 }
