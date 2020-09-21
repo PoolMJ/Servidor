@@ -66,7 +66,7 @@ function LED_PRENDIDO_1(){
 	client.send(message);
 }
 
-function LED_APAGADO_2(){
+function LED_APAGADO_1(){
 	console.log("Led Prendido")
 	massage=new Paho.MQTT.Message("led1A");
 	message.destinationName="pemaldonado.fie@unach.edu.ec/psd";
