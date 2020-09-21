@@ -56,14 +56,14 @@
 
 function LED_PRENDIDO_1(){
 	console.log("Led Prendido")
-	massage=new Paho.MQTT.Message("led1p")
+	massage=new Paho.MQTT.Message("led1p");
 	message.destinationName="pemaldonado.fie@unach.edu.ec/psd";
 	client.send(message);
 }
 
 function LED_APAGADO_2(){
 	console.log("Led Prendido")
-	massage=new Paho.MQTT.Message("led1a")
+	massage=new Paho.MQTT.Message("led1a");
 	message.destinationName="pemaldonado.fie@unach.edu.ec/psd";
 	client.send(message);
 }
