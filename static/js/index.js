@@ -54,11 +54,9 @@
   // called when a message arrives
 
 function onMessageArrived(message) {
-	 console.log(message.payloadString);
-	 text=(message.payloadString)split(":")[0];
-	 text2=(message.payloadString).split(":")[1];
+	 text=(message.payloadString);
+	 console.log(text)
 	 document.getElementById("respuesta").innerHTML = text;
-	 document.getElementById("respuesta2").innerHTML = text2;
 }
 
 //document.getElementById("N1N2").innerHTML="numeros";
