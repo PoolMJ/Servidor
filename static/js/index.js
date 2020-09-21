@@ -7,9 +7,7 @@
 
 // Create a client instance
   //client = new Paho.MQTT.Client("postman.cloudmqtt.com", 14970);
-  
-  client = new Paho.MQTT.Client("maqiatto.com", 8883, "web_" + parseInt(Math.random() * 100, 10));
-
+   client = new Paho.MQTT.Client("maqiatto.com", 8883, "web_" + parseInt(Math.random() * 100, 10));
   // set callback handlers
   client.onConnectionLost = onConnectionLost;
   client.onMessageArrived = onMessageArrived;
@@ -21,6 +19,7 @@
     onFailure:doFail
   }
 
+
   // connect the client
   client.connect(options);
    
@@ -30,7 +29,7 @@
     console.log("Conectado...");
 	
     client.subscribe("pemaldonado.fie@unach.edu.ec/pagweb");
-    message = new Paho.MQTT.Message("hola desde la web");
+    message = new Paho.MQTT.Message("Conectado..........!!!..!!.!..");
     message.destinationName = "pemaldonado.fie@unach.edu.ec/psd";
     client.send(message);
 	
