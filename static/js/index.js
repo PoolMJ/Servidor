@@ -57,18 +57,20 @@ function onMessageArrived(message) {
 	 texto=(message.payloadString);
 }
 
+//document.getElementById("N1N2").innerHTML="numeros";
 
-
-function LED_PRENDIDO_1(){
-	console.log("Led Prendido")
-	message=new Paho.MQTT.Message("led1P");
+function SUMA(){
+	console.log("Suma de dos numeros"")
+	message=new Paho.MQTT.Message("suma");
+	var a=document.getElementById("numero1").value;
+	var b=document.getElementById("numero2").value;
 	message.destinationName="pemaldonado.fie@unach.edu.ec/psd";
 	client.send(message);
 }
 
-function LED_APAGADO_1(){
-	console.log("Led Prendido")
-	message=new Paho.MQTT.Message("led1A");
+function RESTA(){
+	console.log("Resta de dos numeros")
+	message=new Paho.MQTT.Message("resta");
 	message.destinationName="pemaldonado.fie@unach.edu.ec/psd";
 	client.send(message);
 }
