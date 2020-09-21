@@ -60,9 +60,9 @@ function onMessageArrived(message) {
 //document.getElementById("N1N2").innerHTML="numeros";
 
 function SUMA(){
-	message=new Paho.MQTT.Message("Suma");
-	var a=document.getElementById("n1").value;
-	var b=document.getElementById("n2").value;
+	n1=document.getElementById("n1").value;
+	n2=document.getElementById("n2").value;
+	message = new Paho.MQTT.Message("S"+" "+ n1 +" "+ n2 );
 	message.destinationName="pemaldonado.fie@unach.edu.ec/psd";
 	client.send(message);
 }
