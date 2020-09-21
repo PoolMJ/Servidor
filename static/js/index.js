@@ -60,7 +60,6 @@ function onMessageArrived(message) {
 //document.getElementById("N1N2").innerHTML="numeros";
 
 function SUMA(){
-	console.log("Suma de dos numeros"")
 	message=new Paho.MQTT.Message("Suma");
 	var a=document.getElementById("n1").value;
 	var b=document.getElementById("n2").value;
