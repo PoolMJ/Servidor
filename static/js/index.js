@@ -55,7 +55,7 @@
 
 function onMessageArrived(message) {
 	 text=(message.payloadString);
-	 console.log(text)
+	 console.log(text)  
 	 document.getElementById("respuesta").innerHTML = text;
 }
 
@@ -70,10 +70,29 @@ function SUMA(){
 }
 
 function RESTA(){
-	console.log("Resta de dos numeros")
-	message=new Paho.MQTT.Message("resta");
+	n1=document.getElementById("n1").value;
+	n2=document.getElementById("n2").value;
+	message = new Paho.MQTT.Message("R"+" "+ n1 +" "+ n2 );
 	message.destinationName="pemaldonado.fie@unach.edu.ec/psd";
 	client.send(message);
 }
+
+function MULTIPLICACION(){
+	n1=document.getElementById("n1").value;
+	n2=document.getElementById("n2").value;
+	message = new Paho.MQTT.Message("M"+" "+ n1 +" "+ n2 );
+	message.destinationName="pemaldonado.fie@unach.edu.ec/psd";
+	client.send(message);
+}
+
+function DIVISION(){
+	n1=document.getElementById("n1").value;
+	n2=document.getElementById("n2").value;
+	message = new Paho.MQTT.Message("D"+" "+ n1 +" "+ n2 );
+	message.destinationName="pemaldonado.fie@unach.edu.ec/psd";
+	client.send(message);
+}
+
+
 
 
