@@ -62,8 +62,8 @@ function onMessageArrived(message) {
 function SUMA(){
 	console.log("Suma de dos numeros"")
 	message=new Paho.MQTT.Message("suma");
-	var a=document.getElementById("numero1").value;
-	var b=document.getElementById("numero2").value;
+	var a=document.getElementById("n1").value;
+	var b=document.getElementById("n2").value;
 	message.destinationName="pemaldonado.fie@unach.edu.ec/psd";
 	client.send(message);
 }
