@@ -65,17 +65,16 @@ function onMessageArrived(message) {
 
 
 
-function pender sensor_A(){
-	console.log("sensor_A Prendido")
-	message=new Paho.MQTT.Message("led1AP");
+function LED_PRENDIDO_1(){
+	console.log("Led Prendido")
+	message=new Paho.MQTT.Message("led1P");
 	message.destinationName="pemaldonado.fie@unach.edu.ec/psd";
 	client.send(message);
 }
 
-function apagar sensor_A(){
-	console.log("sensor_A Apagado")
-	message=new Paho.MQTT.Message("led1AA");
+function LED_APAGADO_1(){
+	console.log("Led Prendido")
+	message=new Paho.MQTT.Message("led1A");
 	message.destinationName="pemaldonado.fie@unach.edu.ec/psd";
 	client.send(message);
 }
-
