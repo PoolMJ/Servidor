@@ -54,7 +54,13 @@
   // called when a message arrives
 
 function onMessageArrived(message) {
-	 texto=(message.payloadString);
+	 identificador=(message.payloadString).split(" ")[0];
+	 dato=(message.payloadString).split(" ")[1];
+	 console.log(identificador + " " + dato)
+	 if(identificador=="pa")
+		 document.getElementById("estado").innerHTML = dato;
+	 if(identificador=="aa")
+		 document.getElementById("estado").innerHTML = dato;
 }
 
 
