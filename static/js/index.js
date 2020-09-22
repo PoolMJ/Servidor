@@ -57,7 +57,7 @@ function onMessageArrived(message) {
 	 identificador=(message.payloadString).split(" ")[0];
 	 dato=(message.payloadString).split(" ")[1];
 	 console.log(identificador + " " + dato)
-	 if(identificador=="s")
+	 if(identificador=="SM")
 		 document.getElementById("respuesta").innerHTML = dato;
 	 if(identificador=="r")
 		 document.getElementById("respuesta").innerHTML = dato;
