@@ -26,7 +26,7 @@
   // called when the client connects
   function onConnect() {
     // Once a connection has been made, make a subscription and send a message.
-    console.log("Conectado...");
+    console.log("Conectado a la RPI...!!!..!!..!..");
 	
     client.subscribe("pemaldonado.fie@unach.edu.ec/pagweb");
     message = new Paho.MQTT.Message("Conectado..........!!!..!!.!..");
@@ -89,6 +89,7 @@ function DIVISION(){
 	n1=document.getElementById("n1").value;
 	n2=document.getElementById("n2").value;
 	message = new Paho.MQTT.Message("DV"+" "+ n1 +" "+ n2 );
+	message = new Paho.MQTT.Message("E"+" "+ n1 +" "+ n2 );
 	message.destinationName="pemaldonado.fie@unach.edu.ec/psd";
 	client.send(message);
 }
