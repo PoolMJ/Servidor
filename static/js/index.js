@@ -93,12 +93,12 @@ function DIVISION(){
 	client.send(message);
 }
 
-
+//____________________HoraTS______________________
 
 function onMessageArrived(message) {
 	identificador=(message.payloadString).split(" ")[0];
 	 dato=(message.payloadString).split(" ")[1];
-	 if(identificador=="H")
+	 if(identificador=="T")
 	 document.getElementById("hora").innerHTML = dato;
 }
 
