@@ -26,7 +26,7 @@
   // called when the client connects
   function onConnect() {
     // Once a connection has been made, make a subscription and send a message.
-    console.log("Conectado a la RPI...!!!..!!..!..");
+    console.log("Conectado...");
 	
     client.subscribe("pemaldonado.fie@unach.edu.ec/pagweb");
     message = new Paho.MQTT.Message("Conectado..........!!!..!!.!..");
@@ -54,17 +54,22 @@
   // called when a message arrives
 
 function onMessageArrived(message) {
-	 identificador=(message.payloadString).split(" ")[0];
-	 dato=(message.payloadString).split(" ")[1];
-	 console.log(identificador + " " + dato)
-
-  }
-
-//document.getElementById("N1N2").innerHTML="numeros";
+	 texto=(message.payloadString);
+}
 
 
 
+function pender sensor_A(){
+	console.log("Led Prendido")
+	message=new Paho.MQTT.Message("led1P");
+	message.destinationName="pemaldonado.fie@unach.edu.ec/psd";
+	client.send(message);
+}
 
-
-
+function apagar sensor_A(){
+	console.log("Led Prendido")
+	message=new Paho.MQTT.Message("led1A");
+	message.destinationName="pemaldonado.fie@unach.edu.ec/psd";
+	client.send(message);
+}
 
