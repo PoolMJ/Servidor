@@ -54,19 +54,30 @@
   // called when a message arrives
 
 function onMessageArrived(message) {
-	 text=(message.payloadString);
-	 console.log(text)  
-	 document.getElementById("respuesta").innerHTML = text;
-}
+	 identificador=(message.payloadString).split(" ")[0];
+	 dato=(message.payloadString).split(" ")[1];
+	 console.log("hora recibida")
+	 if(identificador=="s")
+		 document.getElementById("respuesta").innerHTML = dato;
+	 if(identificador=="r")
+		 document.getElementById("respuesta").innerHTML = dato;
+	 if(identificador=="m")
+		 document.getElementById("respuesta").innerHTML = dato;
+	 if(identificador=="d")
+		 document.getElementById("respuesta").innerHTML = dato;
+	 if(identificador=="x")
+		 document.getElementById("hora").innerHTML = dato;
+  }
 
 //document.getElementById("N1N2").innerHTML="numeros";
 
 function SUMA(){
-	n1=document.getElementById("n1").value;
-	n2=document.getElementById("n2").value;
-	message = new Paho.MQTT.Message("SM"+" "+ n1 +" "+ n2 );
-	message.destinationName="pemaldonado.fie@unach.edu.ec/psd";
-	client.send(message);
+		n1=document.getElementById("n1").value;
+		n2=document.getElementById("n2").value;
+		message = new Paho.MQTT.Message("SM"+" "+ n1 +" "+ n2 );
+		message.destinationName="pemaldonado.fie@unach.edu.ec/psd";
+		client.send(message);
+		
 }
 
 function RESTA(){
@@ -95,10 +106,5 @@ function DIVISION(){
 
 //____________________HoraTS______________________
 
-function onMessageArrived(message) {
-	identificador=(message.payloadString).split(" ")[0];
-	 dato=(message.payloadString).split(" ")[1];
-	 if(identificador=="T")
-	 document.getElementById("hora").innerHTML = dato;
-}
+
 
