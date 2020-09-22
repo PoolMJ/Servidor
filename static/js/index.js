@@ -98,6 +98,7 @@ function DIVISION(){
 function onMessageArrived(message) {
 	identificador=(message.payloadString).split(" ")[0];
 	 dato=(message.payloadString).split(" ")[1];
+	 if(identificador=="H")
 	 document.getElementById("hora").innerHTML = dato;
 }
 
