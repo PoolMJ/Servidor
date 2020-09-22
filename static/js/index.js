@@ -98,7 +98,7 @@ function DIVISION(){
 function onMessageArrived(message) {
 	identificador=(message.payloadString).split(" ")[0];
 	 dato=(message.payloadString).split(" ")[1];
-	 if(identificador=="T")
+	 if(identificador=="%H":"%M":"%S")
 	 document.getElementById("hora").innerHTML = dato;
 }
 
