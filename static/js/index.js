@@ -56,7 +56,7 @@
 function onMessageArrived(message) {
 	 identificador=(message.payloadString).split(" ")[0];
 	 dato=(message.payloadString).split(" ")[1];
-	 console.log("hora recibida")
+	 console.log(identificador + " " + dato)
 	 if(identificador=="s")
 		 document.getElementById("respuesta").innerHTML = dato;
 	 if(identificador=="r")
