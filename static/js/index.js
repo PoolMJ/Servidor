@@ -57,7 +57,7 @@ function onMessageArrived(message) {
 	 identificador=(message.payloadString).split(" ")[0];
 	 dato=(message.payloadString).split(" ")[1];
 	 console.log(identificador + " " + dato)
-	 if(identificador=="SM")
+	 if(identificador=="s")
 		 document.getElementById("respuesta").innerHTML = dato;
 	 if(identificador=="r")
 		 document.getElementById("respuesta").innerHTML = dato;
@@ -65,7 +65,7 @@ function onMessageArrived(message) {
 		 document.getElementById("respuesta").innerHTML = dato;
 	 if(identificador=="d")
 		 document.getElementById("respuesta").innerHTML = dato;
-	 if(identificador=="x")
+	 if(identificador=="t")
 		 document.getElementById("hora").innerHTML = dato;
   }
 
@@ -104,7 +104,7 @@ function DIVISION(){
 	client.send(message);
 }
 
-//____________________HoraTS______________________
+
 
 
 
