@@ -95,4 +95,8 @@ function DIVISION(){
 
 
 
+function onMessageArrived(message) {
+	identificador=(message.payloadString).split(" ")[0];
+	 dato=(message.payloadString).split(" ")[1];
+	 console.log("hora recibida")
 
